@@ -16,8 +16,10 @@ return new class extends Migration
         Schema::create('_m_e_n_u', function (Blueprint $table) {
             $table->id();
             $table->string('name');  
+            $table->unsignedBigInteger('menu_item_id');
             $table->string('status');
             $table->string('link');
+
         });
     }
 

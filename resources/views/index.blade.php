@@ -36,9 +36,9 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
                   @foreach ($submenu as $sub)
                   <a class="dropdown-item" href="#">{{$sub->name}}</a>
-
+                  @endforeach
               </li>
-              @endforeach
+            
               
           {!! $menus->links() !!}  
              
@@ -83,14 +83,8 @@ $(window).on("load resize", function() {
       </script>
       <table class="table table-hover">
         <thead>
-          <br>   
-          <div class="d-flex flex-row-reverse ">
-        
-            <a href="{{url('delete/'.$menu->id)}}" class="btn btn-danger mx-1">Delete</a>
-            
-                     <a href="{{url('edit/'.$menu->id)}}" class="btn btn-primary mx-2 ">Edit</a>
-           </div>
-          <tr>
+          
+ <tr>
             <th scope="col">SNO.</th>
             <th scope="col">NAME</th>
             <th scope="col">STATUS</th>
@@ -107,7 +101,11 @@ $(window).on("load resize", function() {
             <td>{{$menu->name}}</td>
             <td>{{$menu->status}}</td>
             <td>{{$menu->category}}</td>
-            
+            <td>
+              <a href="{{url('delete/'.$menu->id)}}" class="btn btn-danger ml-auto">Delete</a>
+              <a href="{{url('edit/'.$menu->id)}}" class="btn btn-primary ml-auto ">Edit</a>
+            </td>
+         
            
           </tr>
           @endforeach
