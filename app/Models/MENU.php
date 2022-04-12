@@ -4,12 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\SUBMENU;
 
 class MENU extends Model
 {
     use HasFactory;
     protected $table = '_m_e_n_u';
     protected $fillable =[
-        'name','status','link','category','sub_category'
+        'name','status','link',
     ];
+    public function SUBMENU(){
+      
+        return $this->hasmany('App\Models\SUBMENU');
+        // return $this->hasmany('App\Models\SUBMENU');
+       
+    }
 }

@@ -23,13 +23,27 @@
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
                 @foreach ($menus as $menu)
-               
+                @if (count($menu->SUBMENU) > 0)
+                <li class="nav-item dropdown">
+                  <a class="nav-link " href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 {{$menu->name}}
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                    @foreach ($menu->SUBMENU as $sub)
+                    <a class="dropdown-item" href="{{$sub->link}}">{{$sub->name}}</a>
+                    @endforeach
+                  </div>
+                </li>
+              
+               @else
                 <a class="nav-link active" aria-current="page" href="{{url($menu->link)}}">{{$menu->name}}</a>
               </li>
+              @endif
+                
               @endforeach
        
      
-              <li class="nav-item dropdown">
+              {{-- <li class="nav-item dropdown">
                 <a class="nav-link " href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Dropdown
                 </a>
@@ -37,7 +51,7 @@
                   @foreach ($submenu as $sub)
                   <a class="dropdown-item" href="#">{{$sub->name}}</a>
                   @endforeach
-              </li>
+              </li> --}}
             
               
           {!! $menus->links() !!}  

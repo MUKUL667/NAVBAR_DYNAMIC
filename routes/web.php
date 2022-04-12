@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MENUCONTROLLER;
+use App\Http\Controllers\SUBMENUCONTROLLER;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +32,8 @@ route::get('/add', [MENUCONTROLLER::class,'addpost'])->name('add.post');
 route::post('/add', [MENUCONTROLLER::class,'savepost'])->name('save.post');
 
 route::post('/update', [MENUCONTROLLER::class,'updatepost']);
+
+///ROUTES OF SUBMENU
+route::get('/submenuadd', [SUBMENUCONTROLLER::class,'addpost'])->name('add.post');
+
+route::post('/submenuadd', [SUBMENUCONTROLLER::class,'savepost'])->name('save.post');

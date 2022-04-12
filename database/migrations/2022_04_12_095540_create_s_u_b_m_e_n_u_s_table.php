@@ -13,12 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('_m_e_n_u', function (Blueprint $table) {
+        Schema::create('s_u_b_m_e_n_u_s', function (Blueprint $table) {
             $table->id();
             $table->string('name');  
+            $table->unsignedBigInteger('menu_id');
             $table->string('status');
             $table->string('link');
-
+            $table->timestamps();
         });
     }
 
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_m_e_n_u');
+        Schema::dropIfExists('s_u_b_m_e_n_u_s');
     }
 };
