@@ -13,10 +13,5 @@ class MENU extends Model
     protected $fillable =[
         'name','status','link',
     ];
-    public function SUBMENU(){
-      
-        return $this->hasmany('App\Models\SUBMENU');
-        // return $this->hasmany('App\Models\SUBMENU');
-       
-    }
+    
 }

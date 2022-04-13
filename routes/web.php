@@ -34,6 +34,10 @@ route::post('/add', [MENUCONTROLLER::class,'savepost'])->name('save.post');
 route::post('/update', [MENUCONTROLLER::class,'updatepost']);
 
 ///ROUTES OF SUBMENU
+// Route::get('/submenu', [SUBMENUCONTROLLER::class, 'index']);
 route::get('/submenuadd', [SUBMENUCONTROLLER::class,'addpost'])->name('add.post');
 
 route::post('/submenuadd', [SUBMENUCONTROLLER::class,'savepost'])->name('save.post');
+Route::get('/subedit/{id}', [SUBMENUCONTROLLER::class,'edit'])->name('edit');
+route::post('/subupdate', [SUBMENUCONTROLLER::class,'updatepost']);
+Route::get('/subdelete/{id}', [SUBMENUCONTROLLER::class,'delete'])->name('delete');

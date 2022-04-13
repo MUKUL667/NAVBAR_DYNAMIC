@@ -24,43 +24,43 @@
               <li class="nav-item">
                 @foreach ($menus as $menu)
                 <a class="nav-link active" aria-current="page" href="{{url($menu->link)}}">{{$menu->name}}</a>
-                {{-- @if (count($menu->submenu) > 0) --}}
-                <li class="nav-item dropdown">
+                {{-- @if (count($menu->SUBMENU) > 0) --}}
+                {{-- <li class="nav-item dropdown">
                   <a class="nav-link " href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                 {{$menu->subname}}
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                    @foreach ($menus as $menu)
-                    <a class="dropdown-item" href="{{$menu->sublink}}">{{$menu->subname}}</a>
-                    @endforeach
-                  </div>
+                 {{-- {{$menu->name}} --}}
+                  {{-- </a> --}}
+                  {{-- <div class="dropdown-menu" aria-labelledby="navbarDropdown2"> --}}
+                    {{-- @foreach ($menu->SUBMENU as $sub)
+                    <a class="dropdown-item" href="{{$sub->link}}">{{$sub->name}}</a>
+                    @endforeach --}}
+                  {{-- </div> --}}
                 <li> 
               
-               {{-- @else
-                <a class="nav-link active" aria-current="page" href="{{url($menu->link)}}">{{$menu->name}}</a>
-              </li> --}}
+               {{-- @else --}}
+                {{-- <a class="nav-link active" aria-current="page" href="{{url($menu->link)}}">{{$menu->name}}</a> --}}
+              </li>
               {{-- @endif --}}
                 
               @endforeach
        
      
-              <li class="nav-item dropdown">
+              {{-- <li class="nav-item dropdown">
                 <a class="nav-link " href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Dropdown
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                  @foreach ($menus as $menu)
-                  <a class="dropdown-item" href="#">{{$menu->subname}}</a>
+                  @foreach ($submenu as $sub)
+                  <a class="dropdown-item" href="#">{{$sub->name}}</a>
                   @endforeach
-              </li>
+              </li> --}}
             
               
-          {{-- {!! $menus->links() !!}   --}}
+          {!! $menus->links() !!}  
              
             </ul>
           </div>
         </div>
-        <a href="{{url('add/')}}" class="btn btn-primary delete">ADD</a>
+        <a href="{{url('submenuadd/')}}" class="btn btn-primary delete">ADD</a>
       </nav>
    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js,  
       https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"> -->
@@ -116,8 +116,8 @@ $(window).on("load resize", function() {
             <td>{{$menu->status}}</td>
             
             <td>
-              <a href="{{url('delete/'.$menu->id)}}" class="btn btn-danger ml-auto">Delete</a>
-              <a href="{{url('edit/'.$menu->id)}}" class="btn btn-primary ml-auto ">Edit</a>
+              <a href="{{url('subdelete/'.$menu->id)}}" class="btn btn-danger ml-auto">Delete</a>
+              <a href="{{url('subedit/'.$menu->id)}}" class="btn btn-primary ml-auto ">Edit</a>
             </td>
          
            

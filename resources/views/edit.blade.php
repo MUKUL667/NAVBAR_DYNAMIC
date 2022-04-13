@@ -17,7 +17,7 @@
      menu: <br><input type="text" name="name" value="{{$menu->name}}"><br>
         status:<br><input type="text" name="status" value="{{$menu->status}}"><br>
         url:<br><input type="text" name="link" value="{{$menu->link}}"><br>
-        category:<br><input type="text" name="category" value="{{$menu->category}}"><br>
+        
         <input type="submit" value="submit">
     </form>
 </body>
@@ -25,10 +25,3 @@
 
 
 
-<? php
-
-$sql=insert into "table_name " valius ("","","") ;
-echo 
-
-
-?>

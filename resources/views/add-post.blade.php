@@ -17,8 +17,8 @@
      menu: <input type="text" name="name" value=""><br>
         status:<input type="text" name="status" value=""><br>
         url:<input type="text" name="link" value=""><br>
-         category:<input type="text" name="category" value=""><br>
-        {{-- sub_category:<input type="text" name="sub_category" value=""><br> --}} --}}
+    
+        {{-- sub_category:<input type="text" name="sub_category" value=""><br> --}} 
         {{-- <label for="category" >select the category:</label> --}}
         {{-- <select required name="menu_item_id" >
             @foreach($men_us as $menu)
