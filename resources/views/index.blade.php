@@ -24,22 +24,23 @@
               <li class="nav-item">
                 @foreach ($menus as $menu)
                 <a class="nav-link active" aria-current="page" href="{{url($menu->link)}}">{{$menu->name}}</a>
-                {{-- @if (count($menu->submenu) > 0) --}}
+                {{-- {{dd($menus)}} --}}
+                @if (!empty($menu))
                 <li class="nav-item dropdown">
-                  <a class="nav-link " href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {{-- <a class="nav-link " href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                  {{$menu->subname}}
-                  </a>
+                  </a> --}}
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
                     @foreach ($menus as $menu)
                     <a class="dropdown-item" href="{{$menu->sublink}}">{{$menu->subname}}</a>
                     @endforeach
                   </div>
-                <li> 
+                {{-- <li>  --}}
               
-               {{-- @else
+             @else
                 <a class="nav-link active" aria-current="page" href="{{url($menu->link)}}">{{$menu->name}}</a>
-              </li> --}}
-              {{-- @endif --}}
+              </li>
+              @endif
                 
               @endforeach
        
@@ -50,7 +51,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
                   @foreach ($menus as $menu)
-                  <a class="dropdown-item" href="#">{{$menu->subname}}</a>
+                  <a class="dropdown-item" href="{{$menu->link}}">{{$menu->subname}}</a>
                   @endforeach
               </li>
             

@@ -18,9 +18,8 @@ class MENUCONTROLLER extends Controller
     //                                           ->get();
     // $menus = MENU::where('status','ENABLED')->orderBy('id','desc')->paginate(5);
     $menus = DB::table('_m_e_n_u')->select('_m_e_n_u.id','_m_e_n_u.status','_m_e_n_u.link','_m_e_n_u.name','s_u_b_m_e_n_u_s.subname','s_u_b_m_e_n_u_s.substatus','s_u_b_m_e_n_u_s.sublink')
-    ->leftjoin('s_u_b_m_e_n_u_s','_m_e_n_u.id','=','s_u_b_m_e_n_u_s.menu_id')
-                    ->get();
-                    dd($menus);
+    ->leftjoin('s_u_b_m_e_n_u_s','_m_e_n_u.id','=','s_u_b_m_e_n_u_s.menu_id')->get();
+                     
 // $menus = MENU::where('status','ENABLED')->orderBy('id','desc')->paginate(5);
 // return view('index',compact('menus'));
 

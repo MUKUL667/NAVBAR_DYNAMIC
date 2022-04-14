@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
 use App\Http\Controllers\MENUCONTROLLER;
 use App\Http\Controllers\SUBMENUCONTROLLER;
 
@@ -23,6 +25,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', function () {
+    return view('welcome');
+});
+ 
+
+//////////////////////////////////
 
 Route::get('/index', [MENUCONTROLLER::class, 'index']);
 Route::get('/delete/{id}', [MENUCONTROLLER::class, 'delete'])->name('delete');

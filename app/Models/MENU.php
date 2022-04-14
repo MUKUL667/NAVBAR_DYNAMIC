@@ -13,5 +13,4 @@ class MENU extends Model
     protected $fillable =[
         'name','status','link',
     ];
-    
 }
